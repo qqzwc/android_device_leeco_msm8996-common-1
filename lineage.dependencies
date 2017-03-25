@@ -1,7 +1,8 @@
 [
     {
-        "repository": "android_kernel_leeco_msm8996",
-        "target_path": "kernel/leeco/msm8996"
+        "repository":  "villarleg/android_kernel_leeco_msm8996",
+        "target_path": "kernel/leeco/msm8996",
+        "branch":      "cm-14.1"
     },
     {
         "repository": "android_device_qcom_common",
