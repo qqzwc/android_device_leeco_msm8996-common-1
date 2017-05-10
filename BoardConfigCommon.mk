@@ -124,12 +124,6 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 TARGET_PROVIDES_POWERHAL := true
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.msm8996
 
-# CM Hardware
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(PLATFORM_PATH)/cmhw
-BOARD_USES_CYANOGEN_HARDWARE := true
-
 # CNE and DPM
 BOARD_USES_QCNE := true
 
@@ -151,13 +145,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
+WITH_DEXPREOPT := true
 
 # GPS
 TARGET_NO_RPC := true
@@ -172,10 +160,10 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+#TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # RIL
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
@@ -200,6 +188,8 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Recovery
 #RECOVERY_VARIANT := twrp
+#TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
