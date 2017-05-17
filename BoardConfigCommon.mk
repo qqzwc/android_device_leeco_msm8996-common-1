@@ -62,6 +62,9 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# Dumpstate
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.msm8996
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 
