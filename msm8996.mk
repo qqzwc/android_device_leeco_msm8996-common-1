@@ -87,10 +87,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
 
-# Alipay / WeChat
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
-
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
