@@ -8,3 +8,7 @@
 
 # IR Blaster
 /dev/ttyHSL1                u:object_r:cir_device:s0
+# IR control
+/sys/remote/enable    u:object_r:sysfs_ir_enable:s0
+/data/app(/.*)?                       u:object_r:apk_data_file:s0
+/data/app(/.*)?                       u:object_r:app_data_file:s0
