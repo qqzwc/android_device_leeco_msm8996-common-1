@@ -541,7 +541,9 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
    group root
-   writepid /dev/cpuset/system-background/tasks
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
 
 service time_daemon /system/bin/time_daemon
    class late_start
@@ -1254,6 +1256,9 @@ service mbn-daemon /system/bin/mbn_daemon -U
     user root
     group radio cache inet misc audio log qcom_diag
     oneshot
+
+on charger
+    setprop persist.sys.usb.config charging
 
 on property:persist.sys.le_fast_chrg_enable=1
     write /sys/class/power_supply/le_ab/le_quick_charge_mode 0
